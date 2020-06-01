@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - UAI</title>
+    <link href="~/Content/site.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header class="titleContainer">
+            <p class="titleData"><b> ¿Hay vidas en otros planetas? - Sistemas Solares</b> </p>
+        </header>
+        <section>
+            <article>
+                @RenderBody()
+            </article>
+        </section>
+
+        <aside id="pub" >
+            <article>
+                <nav>
+                <ul>
+                    <li><a href="/">Principal</a> </li>
+                    <li><a href="/Home/Contact">Cosmos</a> </li>
+                </ul>
+            </nav>
+            </article>
+        </aside>
+        <footer>
+            <p><s>¿Hay vidas en otros planetas? - @DateTime.Now.Year </s></p>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
