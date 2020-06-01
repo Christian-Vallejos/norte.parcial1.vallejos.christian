@@ -13,5 +13,9 @@ namespace norteParcial1VallejosChristian.web.Controllers
         {
             return View();
         }
+        public ActionResult Cosmo()
+        {
+            return View();
+        }
     }
 }

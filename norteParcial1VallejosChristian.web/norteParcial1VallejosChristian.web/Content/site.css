@@ -50,16 +50,16 @@ em {
 
 
 section {
-    background-color: antiquewhite;
+    background-color: #ccc;
     float: right;
-    width: 70%;
+    width: 80%;
     min-height: 450px;
 }
 
 aside {
     background-color: white;
     float: right;
-    width: 30%;
+    width: 20%;
     min-height: 450px;
 }
 

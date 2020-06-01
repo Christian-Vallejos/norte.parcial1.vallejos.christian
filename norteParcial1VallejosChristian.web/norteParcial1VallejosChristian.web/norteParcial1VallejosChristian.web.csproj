@@ -88,12 +88,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\expansion-hubble.jpg" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\Home\Cosmo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
