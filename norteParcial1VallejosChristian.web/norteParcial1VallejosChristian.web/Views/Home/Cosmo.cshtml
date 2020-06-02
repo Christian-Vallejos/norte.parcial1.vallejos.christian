@@ -61,10 +61,6 @@
             var c = new Constelacion();
             c.Add(siglo, nombre);
             listaConstelaciones.push(c);
-            limpiar("txtSiglo");
-            siglo.innerHTML = "";
-            nombre.innerHTML = "";
-
         }
 
     }
@@ -106,7 +102,12 @@
 @section scripts{
 
     <script>
-            //Resolucion con Jquery
+        $("#btnGuardar").click(function () {
+
+            $("#txtSiglo").val("");
+            $("#txtNombre").val("");
+        });
+        //Resolucion con Jquery
                 //modelado de entidad objeto
         /*        var constelaciones = new Array()
                 function Constelacion() {
