@@ -24,13 +24,13 @@
                     <ul>
                         <li><a href="/">Principal</a> </li>
                         <li>@Html.ActionLink("Cosmo", "Cosmo", "Home")</li>
-                        <li><a href="https://es.wikipedia.org/wiki/Cosmos">Contenido Relacionado</a> </li>
+                        <li><a href="https://es.wikipedia.org/wiki/Cosmos" target="_blank">Contenido Relacionado</a> </li>
                     </ul>
             </nav>
             </article>
         </aside>
         <footer>
-            <p><s>¿Hay vidas en otros planetas? - @DateTime.Now.Year </s></p>
+            <p><u>¿Hay vidas en otros planetas? - @DateTime.Now.Year </u></p>
         </footer>
     </div>
     @RenderSection("scripts", required: false)

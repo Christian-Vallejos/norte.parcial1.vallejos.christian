@@ -2,37 +2,40 @@
 @{
     ViewBag.Title = "Cosmo";
 }
-<div>
-    <h2>Cosmo</h2>
-    <p>Dentro de esta seccion se permite la carga de constelaciones y listarlas</p>
-    <h2>Gestion de Constelaciones</h2>
     <div>
-        <table>
-            <tr>
-                <th>Siglo</th>
-                <td>
-                    <input id="txtSiglo" type="text" placeholder="ingerse Siglo" />
-                </td>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <td>
-                    <input id="txtNombre" type="text" placeholder="ingerse Nombre" />
-                </td>
-            </tr>
+        <h2>Cosmo</h2>
+        <br />
+        <p>Dentro de esta seccion se permite la carga de constelaciones y listarlas</p>
+        <br />
+        <h2>Gestion de Constelaciones</h2>
+        <br />
+        <div>
+            <table>
+                <tr>
+                    <th>Siglo</th>
+                    <td>
+                        <input id="txtSiglo" type="text" placeholder="Ingrse Siglo" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <td>
+                        <input id="txtNombre" type="text" placeholder="Ingerse Nombre" />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>
-                    <button id="btnGuardar" type="submit" onclick="Guardar()">Guardar</button> |
-                    <button id="btnMostrarLista" type="submit" onclick="MostrarLista()">Mostrar Lista</button>  |
-                    <button id="btnLimpiar" type="submit" onclick="LimpiarLista()">Limpiar Lista</button>
-                </td>
-            </tr>
-        </table>
-        <div id="resultado">
+                <tr>
+                    <td>
+                        <button id="btnGuardar" type="submit" onclick="Guardar()">Guardar</button> |
+                        <button id="btnMostrarLista" type="submit" onclick="MostrarLista()">Mostrar Lista</button>  |
+                        <button id="btnLimpiar" type="submit" onclick="LimpiarLista()">Limpiar Lista</button>
+                    </td>
+                </tr>
+            </table>
+            <div id="resultado">
+            </div>
         </div>
     </div>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script>
@@ -58,6 +61,10 @@
             var c = new Constelacion();
             c.Add(siglo, nombre);
             listaConstelaciones.push(c);
+            limpiar("txtSiglo");
+            siglo.innerHTML = "";
+            nombre.innerHTML = "";
+
         }
 
     }
@@ -66,7 +73,7 @@
     function MostrarLista() {
 
         if (listaConstelaciones.length > 0) {
-            limpiar();
+            limpiar("resultado");
             var html = '';
             html += 'Lista de Constelaciones';
             html += '<ul >'
@@ -82,41 +89,19 @@
     }
 
     function LimpiarLista() {
-        lista = [];
-        limpiar();
+        listaConstelaciones = [];
+        limpiar('resultado');
     }
 
-    function limpiar() {
-        const el = document.getElementById('resultado');
+ 
+
+    function limpiar(value) {
+        const el = document.getElementById(value);
         while (el.firstChild)
             el.removeChild(el.firstChild);
+        
     }
-
-    /*
-    $('#btnMostrarLista').click(function (e) {
-
-        e.preventDefault();
-        if (lista != null ) {
-            var html = '';
-
-
-            html += 'Lista de Objetos';
-            html += '<tr>'
-            for (var i = 0; i < lista.length; i++) {
-                html += '<td> Codigo:' + lista[i].Codigo + ', Nombre: ' + lista[i].Nombre+' </td>'
-            }
-
-            html += '</tr>'
-
-            $('#DivLista').append(html);
-
-
-        }
-    });
-
-*/
-
-</script>
+ </script>
 
 @section scripts{
 
